@@ -79,9 +79,6 @@
         name: ceph-validate
     - import_role:
         name: ceph-infra
-    - import_role:
-        name: ceph-node-exporter
-      when: dashboard_enabled
 
 - hosts: mons
   gather_facts: false
@@ -105,6 +102,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
     - import_role:
@@ -147,6 +147,9 @@
     - import_role:
         name: ceph-handler
     - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
+    - import_role:
         name: ceph-common
     - import_role:
         name: ceph-config
@@ -185,6 +188,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
     - import_role:
@@ -225,6 +231,9 @@
     - import_role:
         name: ceph-handler
     - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
+    - import_role:
         name: ceph-common
     - import_role:
         name: ceph-config
@@ -263,6 +272,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
     - import_role:
@@ -303,6 +315,9 @@
     - import_role:
         name: ceph-handler
     - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
+    - import_role:
         name: ceph-common
     - import_role:
         name: ceph-config
@@ -341,6 +356,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
     - import_role:
@@ -381,6 +399,9 @@
     - import_role:
         name: ceph-handler
     - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
+    - import_role:
         name: ceph-common
     - import_role:
         name: ceph-config
@@ -419,6 +440,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
     - import_role:
@@ -460,6 +484,9 @@
       tags: ['ceph_update_config']
     - import_role:
         name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
+      when: dashboard_enabled
     - import_role:
         name: ceph-common
       when:
@@ -506,6 +533,14 @@
     - import_role:
         name: ceph-defaults
       tags: ['ceph_update_config']
+      when: dashboard_enabled
+    - import_role:
+        name: ceph-facts
+      tags: ['ceph_update_config']
+    - import_role:
+        name: ceph-handler
+    - import_role:
+        name: ceph-node-exporter
       when: dashboard_enabled
     - import_role:
         name: ceph-prometheus
