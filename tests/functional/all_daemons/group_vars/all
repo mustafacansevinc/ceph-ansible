@@ -29,7 +29,3 @@ openstack_cinder_pool:
 openstack_pools:
   - "{{ openstack_glance_pool }}"
   - "{{ openstack_cinder_pool }}"
-nfs_ganesha_stable: true
-nfs_ganesha_dev: false
-nfs_ganesha_stable_branch: V2.5-stable
-nfs_ganesha_flavor: "ceph_master"
